@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(Rigidbody2D))]
+
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
@@ -38,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         isGrounded = false;
-        rb.AddForce(Vector2.up * jumpStrength, ForeMode2D.Impulse); //shorthand for Vector2(0,1)
+        rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse); //shorthand for Vector2(0,1)
         Debug.Log("Jump!", gameObject); //lights up thing that printed the message
     }
 
