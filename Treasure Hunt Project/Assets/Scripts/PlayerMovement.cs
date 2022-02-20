@@ -7,7 +7,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Animator animator;
     Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
 
     [SerializeField]
     float jumpStrength = 5.0f;
@@ -22,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void PlayerControls()
@@ -42,17 +45,17 @@ public class PlayerMovement : MonoBehaviour
 
         isGrounded = false;
         rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse); //shorthand for Vector2(0,1)
-        Debug.Log("Jump!", gameObject); //lights up thing that printed the message
+       // Debug.Log("Jump!", gameObject); //lights up thing that printed the message
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         isGrounded = true;
-        Debug.Log("Hit something", collision.gameObject);
+       // Debug.Log("Hit something", collision.gameObject);
 
     }
 
-    private void FixedUpdate()
+    private void FixedUpdate() //imput for physics and stuff
     {
         rb.velocity = new Vector2(moveX * movementSpeed, rb.velocity.y);
         if (canJump == true)
@@ -68,13 +71,25 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    void Update()
+    void Update() //displaying physics and stuff
     {
         PlayerControls();
-        //if right arrow, sprite reflected on y axis
-        //if left arrow, sprite stays the same 
+        animator.SetFloat("Speed", Mathf.Abs(moveX));
+        
+        if (moveX > 0) //moving to the right
+        {
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.flipX = true;
+            }
+        }
 
-        //if right, go right
-        //if left, go left
+        if (moveX < 0)
+        {
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.flipX = false;
+            }
+        }
     }
 }
