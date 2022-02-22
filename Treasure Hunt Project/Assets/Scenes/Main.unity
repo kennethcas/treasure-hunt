@@ -920,7 +920,8 @@ MonoBehaviour:
   - Bring me something first.
   - I need my eyes back. So I can tell you properly.
   - Don't question my logic.
-  typingSpeed: 0.05
+  typingSpeed: 0.01
+  continueButton: {fileID: 898109757}
 --- !u!4 &425517811
 Transform:
   m_ObjectHideFlags: 0
@@ -1779,7 +1780,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &898109758
 RectTransform:
   m_ObjectHideFlags: 0
