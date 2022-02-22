@@ -6,14 +6,14 @@ public class PickUp : MonoBehaviour
 {
     private Inventory inventory;
     public GameObject itemButton;
-    public int keyCounter = 0;
+   // public int keyCounter = 0;
 
-    private bool endingTrigger = false;
-    public GameObject door;
+   // private bool endingTrigger = false;
+   // public GameObject door;
 
     private void Start()
     {
-        Instantiate(door);
+       // Instantiate(door);
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
      
     }
@@ -33,7 +33,7 @@ public class PickUp : MonoBehaviour
                     inventory.isFull[i] = true;
                     Instantiate(itemButton, inventory.slots[i].transform, false);
                     Destroy(gameObject);
-                    keyCounter++;
+                   // keyCounter++;
                     //bleepSource.Play(); 
                     break;
                 }
@@ -44,14 +44,14 @@ public class PickUp : MonoBehaviour
 
     void Update()
     {
-       if (keyCounter == 3){
-            endingTrigger = true;
-        }
+       //if (keyCounter == 3){
+       //     endingTrigger = true;
+       // }
 
-       if (endingTrigger == true)
-        {
-            Destroy(door);
-        }
+      // if (endingTrigger == true)
+      //  {
+      //      Destroy(door);
+       // }
     }
    
 
