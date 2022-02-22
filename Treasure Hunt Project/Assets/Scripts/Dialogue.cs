@@ -23,4 +23,17 @@ public class Dialogue : MonoBehaviour
             yield return new WaitForSeconds(0.02f);
         }
     }
+
+    public void NextSentence()
+    {
+        if (index < sentences.Length - 1)
+        {
+            index++;
+            textDisplay.text = "";
+            StartCoroutine(Type());
+        } else
+        {
+            textDisplay.text = "";
+        }
+    }
 }
