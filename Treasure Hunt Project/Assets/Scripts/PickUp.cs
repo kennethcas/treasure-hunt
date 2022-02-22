@@ -13,7 +13,7 @@ public class PickUp : MonoBehaviour
 
     private void Start()
     {
-        instantiate(door);
+        Instantiate(door);
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
      
     }
@@ -44,7 +44,7 @@ public class PickUp : MonoBehaviour
 
     void Update()
     {
-       if keyCounter == 3{
+       if (keyCounter == 3){
             endingTrigger = true;
         }
 
