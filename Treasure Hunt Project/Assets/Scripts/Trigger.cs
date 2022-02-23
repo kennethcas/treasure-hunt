@@ -4,6 +4,7 @@ using UnityEngine;
 
 using UnityEngine.SceneManagement;
 
+//trigger always makes loads the next scene
 public class Trigger : MonoBehaviour
 {
     BoxCollider2D boxCollider;
