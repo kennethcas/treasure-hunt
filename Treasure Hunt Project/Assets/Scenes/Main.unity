@@ -4641,6 +4641,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &2138065394
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4900392278027060194, guid: a5368bd6b23a7e14d84e491c45ce3ad4, type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900392278027060194, guid: a5368bd6b23a7e14d84e491c45ce3ad4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 272.04395
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900392278027060194, guid: a5368bd6b23a7e14d84e491c45ce3ad4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 237.07738
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900392278027060194, guid: a5368bd6b23a7e14d84e491c45ce3ad4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -207.49998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900392278027060194, guid: a5368bd6b23a7e14d84e491c45ce3ad4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900392278027060194, guid: a5368bd6b23a7e14d84e491c45ce3ad4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900392278027060194, guid: a5368bd6b23a7e14d84e491c45ce3ad4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900392278027060194, guid: a5368bd6b23a7e14d84e491c45ce3ad4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900392278027060194, guid: a5368bd6b23a7e14d84e491c45ce3ad4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900392278027060194, guid: a5368bd6b23a7e14d84e491c45ce3ad4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900392278027060194, guid: a5368bd6b23a7e14d84e491c45ce3ad4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4900392278027060196, guid: a5368bd6b23a7e14d84e491c45ce3ad4, type: 3}
+      propertyPath: m_Name
+      value: EscapeButton
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a5368bd6b23a7e14d84e491c45ce3ad4, type: 3}
 --- !u!1001 &712938807263969113
 PrefabInstance:
   m_ObjectHideFlags: 0
