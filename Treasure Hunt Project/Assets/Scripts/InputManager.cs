@@ -21,7 +21,7 @@ public class InputManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogError("found more than one input manager in the scene.")
+            Debug.LogError("found more than one input manager in the scene.");
         }
         instance = this;
     }
