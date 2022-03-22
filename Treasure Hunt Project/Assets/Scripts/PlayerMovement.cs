@@ -31,6 +31,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate() //imput for physics and stuff
     {
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
+
         UpdateIsGrounded();
         HandleHorizontalMovement();
         HandleJumping();
@@ -67,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleJumping()
     {
-        Debug.Log(isGrounded);
+        //Debug.Log(isGrounded);
         bool jumpPressed = InputManager.GetInstance().GetJumpPressed();
         if (isGrounded && jumpPressed)
         {
@@ -90,11 +95,19 @@ public class PlayerMovement : MonoBehaviour
 
     void Update() //SPRITE RENDERING
     {
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            moveX = 0;
+        }
+        else
+        {
+            moveX = Input.GetAxis("Horizontal");
+        }
      
         PlayerControls();
         animator.SetFloat("Speed", Mathf.Abs(moveX));
         
-        if (moveX > 0) //moving to the right
+        if (moveX > 0 ) //moving to the right
         {
             if (spriteRenderer != null)
             {
