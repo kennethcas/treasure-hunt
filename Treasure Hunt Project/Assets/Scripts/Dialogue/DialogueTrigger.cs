@@ -23,14 +23,14 @@ public class DialogueTrigger : MonoBehaviour
         if (playerInRange)
         {
             visualCue.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (InputManager.GetInstance().GetInteractPressed())
             {
-                Debug.Log(inkJSON.text);
+                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
             }
         }
         else
         {
-            visualCue.SetActive(false );
+            visualCue.SetActive(false);
         }
     }
 

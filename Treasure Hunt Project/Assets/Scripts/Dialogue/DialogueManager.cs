@@ -7,12 +7,15 @@ using Ink.Runtime;
 public class DialogueManager : MonoBehaviour
 {
     [Header("Dialogue UI")]
+
     [SerializeField] private GameObject dialoguePanel;
+
     [SerializeField] private TextMeshProUGUI dialogueText;
 
     private Story currentStory;
 
     private bool dialogueIsPlaying;
+
     private static DialogueManager instance;
 
     private void Awake()
@@ -22,6 +25,11 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("found more than one dialogue manager in the scene");
         }
         instance = this;
+    }
+
+    public static DialogueManager GetInstance()
+    {
+        return instance;
     }
 
     private void Start()
