@@ -68,10 +68,23 @@ You see a boat filled with people. It has not sunk, but when you look again you 
 
 ===secondRiddle===
 The second riddle. Okayy
--> END
+    + [This is the correct answer]
+        -> rightAnswer
+    + [This is a wrong answer]
+        -> wrongAnswer
+    + [Another wrong answer]
+        -> wrongAnswer
+
 ===thirdRiddle===
 The last riddle. Wow this is a real hard one.
--> END
+    + [This is a wrong answer]
+        -> wrongAnswer
+    + [This is the correct answer]
+        -> rightAnswer
+    + [This is a wrong answer]
+        -> wrongAnswer
+
+
 ===thinkOfSomething===
 I guess. I was already bouncing between these three ideas. You could just pick one of those.
     +[Alright, let me pick]
@@ -87,10 +100,19 @@ I'll just give you the key. Its a little bit behind me.
 I'm only giving it to you because you're a nice guy ok.
 You shouldn't be trapped in this place like the rest of us. 
 You should go ahead and find out what else is out there. 
-And if you come back a ghost there's always more space for you here.
+And if you come back as a ghost there's always more space for you here.
 Alright, goodbye. And good luck.
     +[Goodbye]
         ->END
+
 ===rightAnswer===
-Correct. The key is a little bit behind me. Good luck.
+That's right! Wow you're so smart.
+The key should be a little bit behind me now. Take it and get out of here.
+You shouldn't be trapped in this place like the rest of us.
+You should go ahead and find out what else is out there.
+And if you come back as a ghost there's always a place for you here.
+Alright, goodbye.
+Didn't mean to get all philosphical and emotional there.
+Good luck.
+
 -> END
