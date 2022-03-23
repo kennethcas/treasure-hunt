@@ -1482,7 +1482,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -335, y: -76}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 216.7498, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &692987903
 MonoBehaviour:
@@ -3214,7 +3214,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -335, y: -112.3}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 216.7498, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1171234922
 MonoBehaviour:
@@ -5923,7 +5923,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -335, y: -148.6}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 216.7498, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &2067574898
 MonoBehaviour:
@@ -6169,5 +6169,9 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5026862789287480306, guid: 364b72da34643a3468eff7609629bc62, type: 3}
+      propertyPath: inkJSON
+      value: 
+      objectReference: {fileID: 4900000, guid: 11e4a5e064adc6440a61edfc78c2b06c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 364b72da34643a3468eff7609629bc62, type: 3}
