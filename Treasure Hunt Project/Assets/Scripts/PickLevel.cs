@@ -24,6 +24,11 @@ public class PickLevel : MonoBehaviour
         SceneManager.LoadScene("Main 3");
     }
 
+    public void GoToLevelFour()
+    {
+        SceneManager.LoadScene("Main 4");
+    }
+
     public void GoToSelectScreen()
     {
         SceneManager.LoadScene("SelectScreen");
