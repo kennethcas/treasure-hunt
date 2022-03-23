@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    AudioSource keyBleep;
     [Header("Movement Parameters")]
-    public float runSpeed = 5.0f;
-    public float jumpSpeed = 10.0f;
-    public float gravityScale = 2.5f;
+    public float runSpeed = 3.0f;
+    public float jumpSpeed = 6.4f;
+    public float gravityScale = 1.0f;
 
     //PLAYER COMPONENTS
     public Animator animator;
@@ -20,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     float moveX;
+
+   
 
     private void Awake()
     {
@@ -86,10 +89,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    //CHECKS FOR ISGROUNDED
-    private void OnCollisionEnter2D(Collision2D collision)
+    void Start()
     {
-        isGrounded = true;
+        keyBleep = GetComponent<AudioSource>();
+    }
+
+    //CHECKS FOR ISGROUNDED
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Key")
+        {
+            keyBleep.Play(0);
+            //Debug.Log("colliding with key");
+        }
 
     }
 

@@ -6,16 +6,18 @@ public class PickUp : MonoBehaviour
 {
     private Inventory inventory;
     public GameObject itemButton;
-   // public int keyCounter = 0;
+    // public int keyCounter = 0;
 
-   // private bool endingTrigger = false;
-   // public GameObject door;
+    // private bool endingTrigger = false;
+    // public GameObject door;
+
+   // AudioSource audioSource;
 
     private void Start()
     {
        // Instantiate(door);
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-     
+        //audioSource = GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -23,13 +25,15 @@ public class PickUp : MonoBehaviour
         
         if (other.CompareTag("Player"))
         {
+            //Debug.Log("key colliding with player");
+            //GetComponent<AudioSource>().Play();
             
             for (int i = 0; i < inventory.slots.Length; i++)
             {
                 if (inventory.isFull[i] == false)
                 {
                     //ITEM CAN BE ADDED TO INVENTORY
-
+                    
                     inventory.isFull[i] = true;
                     Instantiate(itemButton, inventory.slots[i].transform, false);
                     Destroy(gameObject);
