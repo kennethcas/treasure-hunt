@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class Dialogue : MonoBehaviour
 {
@@ -11,18 +12,33 @@ public class Dialogue : MonoBehaviour
     public float typingSpeed;
 
     public GameObject continueButton;
+    public bool narrationIsPlaying { get; private set; }
+
+    private static Dialogue instance;
 
     void Start()
     {
         StartCoroutine(Type());
+        narrationIsPlaying = true;
     }
 
     void Update()
     {
+        Debug.Log(narrationIsPlaying);
+        if (!narrationIsPlaying)
+        {
+            return;
+        }
+
         if(textDisplay.text == sentences[index])
         {
             continueButton.SetActive(true);
         }
+    }
+
+    public static Dialogue GetInstance()
+    {
+        return instance;
     }
 
     IEnumerator Type()
@@ -47,6 +63,8 @@ public class Dialogue : MonoBehaviour
         {
             textDisplay.text = "";
             continueButton.SetActive(false);
+            narrationIsPlaying=false;
+            
         }
     }
 }

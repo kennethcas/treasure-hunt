@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-//THIS SCRIPT ACTS AS A SINGLE POINT FOR ALL OTHER SCRIPTS TO GET THE CURRENT INPUT FROM.
-//IT USES UNITY'S NEW INPUT SYSTEM AND FUNCTIONS SHOULD BE MAPPED TO THEIR CORRESPOINDING CONTROLS
-//USING A PLAYER INPUT COMPONENT WITH UNITY EVENTS
-
 [RequireComponent(typeof(PlayerInput))]
 public class InputManager : MonoBehaviour
 {

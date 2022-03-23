@@ -183,6 +183,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "UI actions",
+            "id": "6d09d7a3-5bce-43ca-af3a-9b43bef5c72d",
+            "actions": [
+                {
+                    "name": "SelectClick",
+                    "type": "Button",
+                    "id": "209eefef-8b91-49db-86eb-01af75e2fc73",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "67a1450e-a2fd-4b2d-b06f-ffe9bb7bf315",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

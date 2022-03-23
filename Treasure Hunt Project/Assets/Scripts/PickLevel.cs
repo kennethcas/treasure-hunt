@@ -5,13 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PickLevel : MonoBehaviour
 {
-    //private string levelOne;
-    //public string levelTwo;
-    //public string levelThree;
-
     private void Start()
     {
-        //levelOne = main;
+        
     }
     public void GoToLevelOne()
     {

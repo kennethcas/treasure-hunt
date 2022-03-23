@@ -35,6 +35,11 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
+        /*
+        if (Dialogue.GetInstance().narrationIsPlaying)
+        {
+            return;
+        }*/
 
         UpdateIsGrounded();
         HandleHorizontalMovement();
