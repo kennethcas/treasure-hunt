@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameObject objectToActivate;
+    public GameObject objectToActivate2;
     AudioSource keyBleep;
     [Header("Movement Parameters")]
     public float runSpeed = 3.0f;
@@ -22,7 +25,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float moveX;
 
-   
+    private bool ghostTrigger = false;
+    private bool interactPressed = false;
+
+    public bool interactedWithGhostNPC { get; private set; }
+
+    private static PlayerMovement instance;
 
     private void Awake()
     {
@@ -30,6 +38,13 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb.gravityScale = gravityScale;
+
+        
+    }
+
+    public static PlayerMovement GetInstance()
+    {
+        return instance;
     }
 
     private void FixedUpdate() //imput for physics and stuff
@@ -92,6 +107,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         keyBleep = GetComponent<AudioSource>();
+        interactedWithGhostNPC = false;
+        ghostTrigger = false;
     }
 
     //CHECKS FOR ISGROUNDED
@@ -103,6 +120,21 @@ public class PlayerMovement : MonoBehaviour
             //Debug.Log("colliding with key");
         }
 
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Ghost")
+        {
+            ghostTrigger = true;
+            /*
+            if (InputManager.GetInstance().GetInteractPressed())
+            {
+                Debug.Log("Interact button pressed");
+                interactedWithGhostNPC = true;
+            }*/
+            
+        }
     }
 
     void PlayerControls()
@@ -138,6 +170,30 @@ public class PlayerMovement : MonoBehaviour
             {
                 spriteRenderer.flipX = false;
             }
+        }
+
+        Debug.Log(interactedWithGhostNPC);
+
+        if (InputManager.GetInstance().GetInteractPressed())
+        {
+            Debug.Log("Interact button pressed");
+            interactPressed = true;
+            if (ghostTrigger == true)
+            {
+                interactedWithGhostNPC = true;
+            }
+            //interactedWithGhostNPC = true;
+        }
+        if (!InputManager.GetInstance().GetInteractPressed())
+        {
+            Debug.Log("Interact button NOT pressed");
+            interactPressed = false;
+        }
+
+        if (interactedWithGhostNPC)
+        {
+            objectToActivate.SetActive(true);
+            objectToActivate2.SetActive(true);
         }
     }
 }

@@ -31,7 +31,7 @@ public class keySound : MonoBehaviour
         StartCoroutine(KeyCoroutine());
         //if (col.gameObject.tag == "Player")
 
-        Debug.Log("key colliding with player");
+        //Debug.Log("key colliding with player");
 
            keyBleep.Play(0);
         //Destroy(gameObject);

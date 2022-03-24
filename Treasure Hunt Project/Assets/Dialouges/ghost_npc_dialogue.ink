@@ -12,6 +12,8 @@ Well, I have it.
     -> bePatient
 + [Are you going to give it to me?]
     -> bePatient
++ [Goodbye.]
+    -> END
     
 ===bePatient===
 Patience. I can't just give it to you for free.
@@ -98,7 +100,7 @@ I guess. I was already bouncing between these three ideas. You could just pick o
 Nope. Wrong answer.
 It's ok. I forgive you.
 I would give you another riddle but honestly I forgot the other ones lol.
-I'll just give you the key. Its a little bit behind me. 
+I'll just give you the key. Its a little bit behind me. You should be able to see it if you press Left Shift again.
 I'm only giving it to you because you're a nice guy ok.
 You shouldn't be trapped in this place like the rest of us. 
 You should go ahead and find out what else is out there. 
@@ -109,7 +111,7 @@ Alright, goodbye. And good luck.
 
 ===rightAnswer===
 That's right! Wow you're so smart.
-The key should be a little bit behind me now. Take it and get out of here.
+The key should be a little bit behind me now. You should be able to see it if you press Left Shift again. Take it and get out of here.
 You shouldn't be trapped in this place like the rest of us.
 You should go ahead and find out what else is out there.
 And if you come back as a ghost there's always a place for you here.

@@ -24,7 +24,7 @@ public class Dialogue : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(narrationIsPlaying);
+        //Debug.Log(narrationIsPlaying);
         if (!narrationIsPlaying)
         {
             return;
