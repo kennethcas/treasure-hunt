@@ -144,6 +144,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update() //SPRITE RENDERING
     {
+        
         if (DialogueManager.GetInstance().dialogueIsPlaying)
         {
             moveX = 0;
@@ -174,6 +175,12 @@ public class PlayerMovement : MonoBehaviour
 
         Debug.Log(interactedWithGhostNPC);
 
+        if (InputManager.GetInstance().GetMovePressed())
+        {
+            Debug.Log("move buttons are being pressed");
+        }
+
+
         if (InputManager.GetInstance().GetInteractPressed())
         {
             Debug.Log("Interact button pressed");
@@ -194,6 +201,11 @@ public class PlayerMovement : MonoBehaviour
         {
             objectToActivate.SetActive(true);
             objectToActivate2.SetActive(true);
+        }
+
+        if (InputManager.GetInstance().GetMovePressed())
+        {
+            Debug.Log("move button is being pressed");
         }
     }
 }

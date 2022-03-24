@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour
     private bool jumpPressed = false;
     private bool interactPressed = false;
     private bool submitPressed = false;
+    private bool movePressed = false;
 
     private static InputManager instance;
 
@@ -89,6 +90,13 @@ public class InputManager : MonoBehaviour
         bool result = jumpPressed;
         jumpPressed = false;
         return result;
+    }
+
+    public bool GetMovePressed()
+    {
+        bool result = movePressed;
+        movePressed = false;
+        return result ;
     }
 
     public bool GetInteractPressed()
