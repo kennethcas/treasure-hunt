@@ -68,20 +68,22 @@ You see a boat filled with people. It has not sunk, but when you look again you 
 
 ===secondRiddle===
 The second riddle. Okayy
-    + [This is the correct answer]
+I have keys, but no locks. I have space, but no rooms. You can enter, but you can't go outside. What am I?
+    + [A keyboard]
         -> rightAnswer
-    + [This is a wrong answer]
+    + [Some kind of mysterious abyss]
         -> wrongAnswer
-    + [Another wrong answer]
+    + [...]
         -> wrongAnswer
 
 ===thirdRiddle===
 The last riddle. Wow this is a real hard one.
-    + [This is a wrong answer]
+I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?
+    + [Silence]
         -> wrongAnswer
-    + [This is the correct answer]
+    + [An echo]
         -> rightAnswer
-    + [This is a wrong answer]
+    + [A fart]
         -> wrongAnswer
 
 
