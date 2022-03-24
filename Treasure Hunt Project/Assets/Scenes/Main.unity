@@ -3055,6 +3055,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ba8a576f28d0b5468890f933cbc00f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectToActivate: {fileID: 0}
+  objectToActivate2: {fileID: 0}
   runSpeed: 5
   jumpSpeed: 10
   gravityScale: 2.5
@@ -5279,6 +5281,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 67368805}
     m_Modifications:
+    - target: {fileID: 712938807236054920, guid: 22b44d3dea56aba49878dc6ecd79c2ef, type: 3}
+      propertyPath: m_fontSize
+      value: 29.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 712938807236054920, guid: 22b44d3dea56aba49878dc6ecd79c2ef, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f22982b82e20d9d4c9e9e103ae0903f1, type: 2}
+    - target: {fileID: 712938807236054920, guid: 22b44d3dea56aba49878dc6ecd79c2ef, type: 3}
+      propertyPath: m_wordSpacing
+      value: 5.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 712938807236054920, guid: 22b44d3dea56aba49878dc6ecd79c2ef, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 29.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 712938807236054920, guid: 22b44d3dea56aba49878dc6ecd79c2ef, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 6411150580614357663, guid: f22982b82e20d9d4c9e9e103ae0903f1, type: 2}
+    - target: {fileID: 712938807236054920, guid: 22b44d3dea56aba49878dc6ecd79c2ef, type: 3}
+      propertyPath: m_characterSpacing
+      value: 3.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 712938807236054920, guid: 22b44d3dea56aba49878dc6ecd79c2ef, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 712938807236054921, guid: 22b44d3dea56aba49878dc6ecd79c2ef, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
