@@ -29,13 +29,7 @@ public class keySound : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         StartCoroutine(KeyCoroutine());
-        //if (col.gameObject.tag == "Player")
-
-        //Debug.Log("key colliding with player");
-
-           keyBleep.Play(0);
-        //Destroy(gameObject);
-        
+        keyBleep.Play(0);        
     }
 
     IEnumerator KeyCoroutine()

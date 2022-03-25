@@ -61,10 +61,13 @@ This is the end of your journey.
 Yeah.
 You still have to get out the same way. Gather the three keys and blah blah blah. 
 But now you know you don't have to rush. 
-Also, we wanted to make this last time more memorable for you. 
-The keys this time are harder to get. You have to talk to others around here and walk around more.
-Some people are more difficult to deal with than others though.
-Good luck. And try and make the most of it.
+You finally have the ability to talk to others here. 
+This one ghost is especially lonely.
+He really wants to talk to you, even though he pretends to be tough.
+He even stole and hid one of the keys. So that you would have to talk to him.
+Anyway.
+Good luck on the rest of your journey. No matter what it may or may not be. 
+And try and make the most of it.
 + [Thank you. I will]
     -> END
 + [Goodbye]
@@ -73,10 +76,13 @@ Good luck. And try and make the most of it.
 ===nearTheEnd===
 You still have to get out the same way. Gather the three keys and blah blah blah. 
 But now you know you don't have to rush. 
-Also, we wanted to make this last time more memorable for you. 
-The keys this time are harder to get. You have to talk to others around here and walk around more.
-Some people are more difficult to deal with than others though.
-Good luck. And try and make the most of it.
+You finally have the ability to talk to others here. 
+This one ghost is especially lonely.
+He really wants to talk to you, even though he pretends to be tough.
+He even stole and hid one of the keys. So that you would have to talk to him.
+Anyway.
+Good luck on the rest of your journey. No matter what it may or may not be. 
+And try and make the most of it.
 + [Thank you. I will]
     -> END
 + [Goodbye]

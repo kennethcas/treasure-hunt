@@ -3057,6 +3057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToActivate: {fileID: 0}
   objectToActivate2: {fileID: 0}
+  walkingAudio: {fileID: 0}
   runSpeed: 5
   jumpSpeed: 10
   gravityScale: 2.5
@@ -3221,11 +3222,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 37dedd9481a045245a1dd91c71d77b43, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2f0e2c0145ea69f40a040a2dac20b88b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

@@ -10,7 +10,9 @@ public class InputManager : MonoBehaviour
     private bool jumpPressed = false;
     private bool interactPressed = false;
     private bool submitPressed = false;
+
     private bool movePressed = false;
+    public bool isMoving { get; private set; }
 
     private static InputManager instance;
 
@@ -23,6 +25,16 @@ public class InputManager : MonoBehaviour
         instance = this;
     }
 
+    public void Start()
+    {
+        isMoving = false;
+    }
+
+    public void Update()
+    {
+        Debug.Log(isMoving);
+    }
+
     public static InputManager GetInstance()
     {
         return instance;
@@ -33,10 +45,12 @@ public class InputManager : MonoBehaviour
         if (context.performed)
         {
             moveDirection = context.ReadValue<Vector2>();
+            isMoving = true;
         }
         else if (context.canceled)
         {
             moveDirection = context.ReadValue<Vector2>();
+            isMoving = false;
         }
     }
 

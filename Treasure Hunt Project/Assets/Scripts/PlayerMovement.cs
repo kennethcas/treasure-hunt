@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -8,7 +10,12 @@ public class PlayerMovement : MonoBehaviour
 {
     public GameObject objectToActivate;
     public GameObject objectToActivate2;
-    AudioSource keyBleep;
+    //AudioSource keyBleep;
+
+    //WALKING VARS
+    public AudioSource walkingAudio;
+    bool isMoving = false;
+
     [Header("Movement Parameters")]
     public float runSpeed = 3.0f;
     public float jumpSpeed = 6.4f;
@@ -39,7 +46,8 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb.gravityScale = gravityScale;
 
-        
+        walkingAudio = GetComponent<AudioSource>();
+
     }
 
     public static PlayerMovement GetInstance()
@@ -53,11 +61,6 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        /*
-        if (Dialogue.GetInstance().narrationIsPlaying)
-        {
-            return;
-        }*/
 
         UpdateIsGrounded();
         HandleHorizontalMovement();
@@ -91,11 +94,20 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();
         rb.velocity = new Vector2(moveDirection.x * runSpeed, rb.velocity.y);
+        /*
+        if (rb.velocity.x != 0)
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
+        */
     }
 
     private void HandleJumping()
     {
-        //Debug.Log(isGrounded);
         bool jumpPressed = InputManager.GetInstance().GetJumpPressed();
         if (isGrounded && jumpPressed)
         {
@@ -106,19 +118,22 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        keyBleep = GetComponent<AudioSource>();
+        //keyBleep = GetComponent<AudioSource>();
+
         interactedWithGhostNPC = false;
         ghostTrigger = false;
+
+
     }
 
     //CHECKS FOR ISGROUNDED
     void OnCollisionEnter2D(Collision2D collision)
-    {
+    {/*
         if (collision.gameObject.tag == "Key")
         {
             keyBleep.Play(0);
             //Debug.Log("colliding with key");
-        }
+        }*/
 
     }
 
@@ -127,13 +142,6 @@ public class PlayerMovement : MonoBehaviour
         if (collider.gameObject.tag == "Ghost")
         {
             ghostTrigger = true;
-            /*
-            if (InputManager.GetInstance().GetInteractPressed())
-            {
-                Debug.Log("Interact button pressed");
-                interactedWithGhostNPC = true;
-            }*/
-            
         }
     }
 
@@ -173,27 +181,26 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        Debug.Log(interactedWithGhostNPC);
+        //Debug.Log(interactedWithGhostNPC);
 
-        if (InputManager.GetInstance().GetMovePressed())
+        /*if (InputManager.GetInstance().GetMovePressed())
         {
             Debug.Log("move buttons are being pressed");
-        }
+        }*/
 
 
         if (InputManager.GetInstance().GetInteractPressed())
         {
-            Debug.Log("Interact button pressed");
+            //Debug.Log("Interact button pressed");
             interactPressed = true;
             if (ghostTrigger == true)
             {
                 interactedWithGhostNPC = true;
             }
-            //interactedWithGhostNPC = true;
         }
         if (!InputManager.GetInstance().GetInteractPressed())
         {
-            Debug.Log("Interact button NOT pressed");
+            //Debug.Log("Interact button NOT pressed");
             interactPressed = false;
         }
 
@@ -203,9 +210,62 @@ public class PlayerMovement : MonoBehaviour
             objectToActivate2.SetActive(true);
         }
 
-        if (InputManager.GetInstance().GetMovePressed())
+        //WALKING SOUND
+        if (Input.GetKeyDown(KeyCode.D) && !walkingAudio.isPlaying && isGrounded)
         {
-            Debug.Log("move button is being pressed");
+            walkingAudio.Play();
         }
+        else if (Input.GetKeyUp(KeyCode.D) && walkingAudio.isPlaying && isGrounded)
+        {
+            walkingAudio.Pause();
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.A) && !walkingAudio.isPlaying && isGrounded)
+        {
+            walkingAudio.Play();
+        }
+        else if (Input.GetKeyUp(KeyCode.A) && walkingAudio.isPlaying && isGrounded)
+        {
+            walkingAudio.Pause();
+        }
+        /*
+        if (InputManager.GetInstance().isMoving && !walkingAudio.isPlaying)
+        {
+            walkingAudio.Play();
+        }
+        else if (InputManager.GetInstance().isMoving && walkingAudio.isPlaying)
+        {
+            walkingAudio.Pause();
+        }*/
+
+        /*
+        if (InputManager.GetInstance().movePressed)
+        {
+            isMoving = true;
+        }*/
+
+        //
+        //Debug.Log(isMoving);
+        /*if (rb.velocity.x != 0)
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
+
+        if (isMoving && !walkingAudio.isPlaying)
+        {
+           walkingAudio.Play();
+        }
+        else if (isMoving && walkingAudio.isPlaying)
+        {
+            walkingAudio.Stop();
+        }*/
+
     }
+
+  
 }
