@@ -47,6 +47,8 @@ public class PlayerMovement : MonoBehaviour
         rb.gravityScale = gravityScale;
 
         walkingAudio = GetComponent<AudioSource>();
+        interactedWithGhostNPC = false;
+        ghostTrigger = false;
 
     }
 
@@ -116,16 +118,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        //keyBleep = GetComponent<AudioSource>();
-
-        interactedWithGhostNPC = false;
-        ghostTrigger = false;
-
-
-    }
-
     //CHECKS FOR ISGROUNDED
     void OnCollisionEnter2D(Collision2D collision)
     {/*
@@ -142,6 +134,7 @@ public class PlayerMovement : MonoBehaviour
         if (collider.gameObject.tag == "Ghost")
         {
             ghostTrigger = true;
+            return;
         }
     }
 
@@ -150,7 +143,7 @@ public class PlayerMovement : MonoBehaviour
         moveX = Input.GetAxis("Horizontal");
     }
 
-    void Update() //SPRITE RENDERING
+    public void Update() //SPRITE RENDERING
     {
         
         if (DialogueManager.GetInstance().dialogueIsPlaying)
@@ -181,12 +174,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        //Debug.Log(interactedWithGhostNPC);
-
-        /*if (InputManager.GetInstance().GetMovePressed())
-        {
-            Debug.Log("move buttons are being pressed");
-        }*/
+     
 
 
         if (InputManager.GetInstance().GetInteractPressed())
@@ -229,41 +217,7 @@ public class PlayerMovement : MonoBehaviour
         {
             walkingAudio.Pause();
         }
-        /*
-        if (InputManager.GetInstance().isMoving && !walkingAudio.isPlaying)
-        {
-            walkingAudio.Play();
-        }
-        else if (InputManager.GetInstance().isMoving && walkingAudio.isPlaying)
-        {
-            walkingAudio.Pause();
-        }*/
-
-        /*
-        if (InputManager.GetInstance().movePressed)
-        {
-            isMoving = true;
-        }*/
-
-        //
-        //Debug.Log(isMoving);
-        /*if (rb.velocity.x != 0)
-        {
-            isMoving = true;
-        }
-        else
-        {
-            isMoving = false;
-        }
-
-        if (isMoving && !walkingAudio.isPlaying)
-        {
-           walkingAudio.Play();
-        }
-        else if (isMoving && walkingAudio.isPlaying)
-        {
-            walkingAudio.Stop();
-        }*/
+        
 
     }
 

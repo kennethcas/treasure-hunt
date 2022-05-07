@@ -32,7 +32,7 @@ public class InputManager : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log(isMoving);
+        //Debug.Log(isMoving);
     }
 
     public static InputManager GetInstance()

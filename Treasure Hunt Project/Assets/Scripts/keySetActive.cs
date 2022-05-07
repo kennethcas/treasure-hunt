@@ -6,11 +6,8 @@ using UnityEngine.InputSystem;
 
 public class keySetActive : MonoBehaviour
 {
-    //private bool interactedWithNPC;
-
     private void Awake()
     {
-        //interactedWithNPC = false;
         gameObject.SetActive(false);
     }
 
