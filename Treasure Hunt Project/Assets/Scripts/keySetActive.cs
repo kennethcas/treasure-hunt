@@ -13,7 +13,6 @@ public class keySetActive : MonoBehaviour
 
     private void Update()
     {
-        
         if (PlayerMovement.GetInstance().interactedWithGhostNPC)
         {
             gameObject.SetActive(true);
